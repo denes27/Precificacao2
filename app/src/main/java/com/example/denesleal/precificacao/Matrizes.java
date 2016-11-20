@@ -21,12 +21,10 @@ public class Matrizes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matrizes);
+        //Inicia os spinners das unidades
         setSpinner();
         setSpinner2();
     }
-
-
-
 
     //Declarando uma lista de Strings pros nomes das matérias primas e um int pra controle da posição na lista
     public ArrayList<String> lista = new ArrayList<String>();
@@ -36,40 +34,6 @@ public class Matrizes extends AppCompatActivity {
     public ArrayList<String> listaunidadeusada = new ArrayList<String>();
     public ArrayList<String> opcunidades = new ArrayList<String>();
     public ArrayList<Float> listaqtdusada = new ArrayList<Float>();
-    private static final int CODE_ACT=1;
-
-//Array de tipos de unidade para usuário escolher (ex: kg de farinha, unidade de ovo)
-    /*public void setOpcunidades(ArrayList<String> opcunidades) {
-        this.opcunidades = opcunidades;
-        opcunidades.add(0,"Unidades");
-        opcunidades.add(1,"Kg");
-        opcunidades.add(2,"g");
-        opcunidades.add(3,"Litro(s)");
-        opcunidades.add(4,"mL");
-    }*/
-    /*   //Adiciona dados na lista  TENTATIVA DE FAZER COM EXPANDABLE LIST N DEU CERTO
-    public void preencheLista(View view){
-
-        //Colocando o que o usuário digitou no editText em uma String mp
-        EditText editmp = (EditText)findViewById(R.id.editmp);
-        String mp = editmp.getText().toString();
-        //Pegar valor do edt Preço
-        EditText editmppreco = (EditText)findViewById(R.id.editmppreco);
-        float mppreco = Float.valueOf(editmppreco.getText().toString());
-        //adiciona a lista na posição n o que estiver escrito no editText
-        Toast.makeText(this, "Valor do preço é "+mppreco, Toast.LENGTH_SHORT).show();
-        lista.add(n, mp);
-
-        //Fazendo aparecer na lista e incrementando n.
-        ExpandableListView lstDados = (ExpandableListView)findViewById(R.id.explistDados);
-        ArrayAdapter<String> adaptador;
-        adaptador = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1,
-                lista);
-        lstDados.setAdapter(adaptador);
-        n++;
-    }*/
-
 
     public void preencheLista(View view){
 
@@ -91,7 +55,7 @@ public class Matrizes extends AppCompatActivity {
 
 
         //adiciona a lista na posição n o que estiver escrito no editText
-        lista.add(n, mp+" R$"+mppreco+" por "+unidade+ " e "+edtqtd+" "+unidade2+" usados.");
+        lista.add(n, mp+", que custa R$"+mppreco+" por "+unidade+ ", e "+edtqtd+" "+unidade2+" são usados.");
         listapreco.add(n,mppreco);
         listaunidade.add(n,unidade);
         listaunidadeusada.add(n,unidade2);
@@ -124,6 +88,7 @@ public class Matrizes extends AppCompatActivity {
         }else Toast.makeText(this, "Lista Vazia", Toast.LENGTH_SHORT).show();
 
     }
+    //Configura a lista "dropdown" de unidades
     public void setSpinner() {
         ArrayList<String> opcunidades = new ArrayList<String>();
         opcunidades.add(0,"Unidades");
@@ -132,11 +97,13 @@ public class Matrizes extends AppCompatActivity {
         opcunidades.add(3,"Litro(s)");
         opcunidades.add(4,"mL");
         Spinner spnunidades = (Spinner) findViewById(R.id.spnunidade);
+        //Precisa de um adapter pra colocar os objetos da lista no spinner
         ArrayAdapter<String> spnadapter;
         spnadapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, opcunidades);
         spnadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnunidades.setAdapter(spnadapter);
     }
+    //mesma coisa pro segundo spinner
     public void setSpinner2() {
         ArrayList<String> opcunidades = new ArrayList<String>();
         opcunidades.add(0,"Unidades");
@@ -150,6 +117,8 @@ public class Matrizes extends AppCompatActivity {
         spnadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnunidades.setAdapter(spnadapter);
     }
+    //Declarando o float do preço da materia prima como static pra conseguir acessar em outra classe, pq não consegui fazer isso por bundle
+    //Não sei que implicações isso pode ter, mas parece ter dado certo
     public static float precoMP = 0;
     public void calculoMP(View view){
         precoMP = 0;
@@ -173,6 +142,7 @@ public class Matrizes extends AppCompatActivity {
         }
             //Anuncia o valor calculado pelo método e chama a activity da proxima parte (CalculoDespesas)
         Toast.makeText(this, "O custo relativo a matéria prima por produto é: "+precoMP, Toast.LENGTH_SHORT).show();
+            //Como disse, não consegui passar o que queria pra próxima activity por bundle, mas tá aqui ainda
             Bundle pacote = new Bundle();
             pacote.putFloat("preco", precoMP);
 

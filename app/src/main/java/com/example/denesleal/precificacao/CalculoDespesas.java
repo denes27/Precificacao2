@@ -25,7 +25,7 @@ public class CalculoDespesas extends AppCompatActivity {
     public float precoMP = Matrizes.precoMP;
 
     public void Calculo(View view){
-
+//Inicializando variaveis pro java não reclamar;
         Float valoraluguel = Float.valueOf(0);
         Float valorenergia = Float.valueOf(0);
         Float valorcombustivel = Float.valueOf(0);
@@ -33,6 +33,7 @@ public class CalculoDespesas extends AppCompatActivity {
         Float valortempo = Float.valueOf(0);
         Float valorlucro = Float.valueOf(0);
 
+        //Pegando valores fornecidos pelo usuário;
         EditText aluguel = (EditText)findViewById(R.id.edtAluguel);
         EditText Energia = (EditText)findViewById(R.id.edtEnergia);
         EditText Combustivel = (EditText)findViewById(R.id.edtCombustivel);
@@ -40,6 +41,7 @@ public class CalculoDespesas extends AppCompatActivity {
         EditText Tempo = (EditText)findViewById(R.id.edtTempo);
         EditText Lucro = (EditText)findViewById(R.id.edtLucro);
 
+        //Condição pra evitar que tenha espaços vazios, pq aí da pau;
         if     (aluguel.length() == 0 ||
                 Energia.length() == 0 ||
                 Combustivel.length() == 0 ||
@@ -51,6 +53,7 @@ public class CalculoDespesas extends AppCompatActivity {
 
 
         }else {
+            //Se todos os campos estiverem preenchidos, cria floats com os valores digitados pelo usuário;
             valoraluguel = Float.valueOf(aluguel.getText().toString());
             valorenergia = Float.valueOf(Energia.getText().toString());
             valorcombustivel = Float.valueOf(Combustivel.getText().toString());
@@ -61,14 +64,16 @@ public class CalculoDespesas extends AppCompatActivity {
             float despesa = 0;
 
             despesa = (valoraluguel + valoragua + valorenergia + valorcombustivel)*(valortempo/160);
-
+            //lembrando que 160 horas é assumindo que a pessoa trabalha 8h por dia, 5 dias por semana.
+            // Talvez a gente tenha que diminuir o número, pq assume que todo o trabalho da pessoa vai para a produção;
             float horatrabalhada = (valortempo*valorlucro)/160;
             float margem = despesa + precoMP;
             float preco = margem + horatrabalhada;
             Toast.makeText(this, "A margem é: "+margem+" e o preço é: "+preco, Toast.LENGTH_LONG).show();
-
+//Mudar para a ultima tela
             setContentView(R.layout.fimdoprocesso);
 
+            //colocar os valores nos textviews e no editText
             String txtm = "R$ "+Float.toString(margem);
             String txtp = "R$ "+Float.toString(preco);
             String txtp2 = Float.toString(preco);
