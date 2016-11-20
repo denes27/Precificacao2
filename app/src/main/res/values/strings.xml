@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Precificacao</string>
+    <string name="title_activity_matrizes">Matrizes</string>
+    <string name="texto_matrizes">Digite os dados dos gastos com matéria prima</string>
+    <string name="txt_botao_addmp">Adicionar à lista</string>
+    <string name="txt_botao_delmp">Remover último item da lista</string>
+    <string name="edittxt_mp">Matéria Prima</string>
+    <string name="edttxt_precoMP">Preço da Matéria Prima</string>
+    <string name="edttxt_qtdMP">Quantidade Usada</string>
+    <string name="DesPergunta1">Quanto de aluguel você gasta por mês no seu negócio?</string>
+    <string name="DesPergunta2">Quanto de energia você gasta por mês no seu negócio?</string>
+    <string name="DesPergunta3">Quanto de combustível você gasta por mês no seu negócio?(não só em transporte, mas por exemplo gás de cozinha)</string>
+    <string name="DesPergunta4">Quanto de água você gasta por mês no seu negócio?</string>
+    <string name="DesPergunta5">Quanto tempo você gasta para produzir este produto ou serviço? (Em horas)</string>
+    <string name="DesPergunta6">Quanto você pretende lucrar em média no mês? Por padrão a resposta é 1 salário mínimo.</string>
+    <string name="botãoDes">Realizar Cálculo</string>
+</resources>

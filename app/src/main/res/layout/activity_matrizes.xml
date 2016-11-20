@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_matrizes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.denesleal.precificacao.Matrizes"
+    android:weightSum="10">
+
+    <TextView
+        android:text="@string/texto_matrizes"
+        android:textSize="20dp"
+        android:textColor="@color/cortexto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView3"
+        android:layout_weight="1"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:layout_weight="4"
+    android:weightSum="5"
+    >
+
+    <EditText
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="@string/edittxt_mp"
+        android:textColorHint="@color/cortexto"
+        android:ems="10"
+        android:id="@+id/editmp"
+        android:layout_weight="1"
+        android:background="@color/fundoedt"
+        />
+    <EditText
+        android:id="@+id/editmppreco"
+        android:inputType="numberDecimal"
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="@string/edttxt_precoMP"
+        android:textColorHint="@color/cortexto"
+        android:background="@color/fundoedt"/>
+    <Spinner
+        android:id="@+id/spnunidade"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/fundoedt"
+        android:layout_margin="3dp"
+        />
+    <EditText
+        android:id="@+id/edtqtd"
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="numberDecimal"
+        android:layout_weight="1"
+        android:hint="@string/edttxt_qtdMP"
+        android:textColorHint="@color/cortexto"
+        android:background="@color/fundoedt"/>
+    <Spinner
+        android:id="@+id/spnunidade2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/fundoedt"
+        android:layout_margin="3dp"/>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_weight="1">
+    <Button
+        android:text="@string/txt_botao_addmp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/btnAdd"
+        android:onClick="preencheLista"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:text="@string/txt_botao_delmp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/button3"
+        android:layout_weight="1"
+        android:onClick="tirarLista"/>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Ir para o próximo passo"
+        android:onClick="calculoMP" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lstDados"
+        android:layout_width="match_parent"
+        android:background="@color/fundolista"
+        android:layout_height="0dp"
+        android:layout_weight="4"/>
+
+    />
+
+
+
+
+</LinearLayout>

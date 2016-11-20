@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="planets_array">22</string-array>
+    <string-array name="arrayunidades">
+        <item>Unidades</item>
+        <item>Kg</item>
+        <item>g</item>
+        <item>L</item>
+        <item>mL</item>
+    </string-array>
+</resources>
