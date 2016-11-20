@@ -183,25 +183,4 @@ public class Matrizes extends AppCompatActivity {
         startActivity(intent);} else Toast.makeText(this, "Não há nada na lista.", Toast.LENGTH_SHORT).show();
     }
 
-    //Envio de arquivos pra outra activity
-    public void enviarDados(){
-
-        // vou criar um bundle para passar o texto para a 2a
-        // activity
-
-        Bundle pacote = new Bundle();
-        pacote.putFloat("preco", precoMP);
-
-        Intent intent = new Intent(this, CalculoDespesas.class);
-        intent.putExtras(pacote);
-
-        // para cada Activity que inicio aguardando resultado,
-        // devo passar um código para ela
-        startActivityForResult(intent,CODE_ACT);
-    }
-
-    public void chamaDespesa(View view){
-
-    }
-
 }

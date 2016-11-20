@@ -7,6 +7,7 @@
     <string name="edittxt_mp">Matéria Prima</string>
     <string name="edttxt_precoMP">Preço da Matéria Prima</string>
     <string name="edttxt_qtdMP">Quantidade Usada</string>
+
     <string name="DesPergunta1">Quanto de aluguel você gasta por mês no seu negócio?</string>
     <string name="DesPergunta2">Quanto de energia você gasta por mês no seu negócio?</string>
     <string name="DesPergunta3">Quanto de combustível você gasta por mês no seu negócio?(não só em transporte, mas por exemplo gás de cozinha)</string>
@@ -14,4 +15,13 @@
     <string name="DesPergunta5">Quanto tempo você gasta para produzir este produto ou serviço? (Em horas)</string>
     <string name="DesPergunta6">Quanto você pretende lucrar em média no mês? Por padrão a resposta é 1 salário mínimo.</string>
     <string name="botãoDes">Realizar Cálculo</string>
+
+    <string name="margem">Margem:</string>
+    <string name="explicacaomargem">Este é o valor mínimo que deve ser cobrado para que não haja prejuízo.
+        É o quanto dos seus gastos foram destinados a este produto. Recomenda-se que o preço final seja maior que este valor.</string>
+    <string name="preco">Preço:</string>
+    <string name="explicacaopreco">Este é o valor sugerido para ser o preço final do produto a partir dos dados fornecidos,
+        para obter o lucro médio desejado supondo uma jornada de trabalho de 8h por dia, 5 dias por semana.</string>
+    <string name="pergunta">Deseja utilizar este valor como preço do produto? Caso não, mude-o agora e confirme, ou então apenas confirme.</string>
+    <string name="botaofinal">Confirmar Preço</string>
 </resources>
