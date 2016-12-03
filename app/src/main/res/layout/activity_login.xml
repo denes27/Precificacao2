@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.denesleal.precificacao.Login"
+    android:background="@color/fundolista">
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:layout_weight="65">
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="@string/bemvindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/cortexto"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/cortexto"
+        android:paddingBottom="10dp"
+        />
+
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:text="@string/digiteemail"
+        android:textSize="20dp"
+        android:textColor="@color/cortexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16" />
+
+    <EditText
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="E-mail"
+        android:ems="10"
+        android:id="@+id/edtLogin"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:text="@string/digitesenha"
+        android:textColor="@color/cortexto"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView17" />
+
+    <EditText
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Senha"
+        android:ems="10"
+        android:id="@+id/edtSenha" />
+
+</LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="50">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+
+        android:background="@color/fundoedt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/novocadastro"
+            android:textSize="25dp"
+            android:textColor="@color/cortexto"
+            android:layout_marginLeft="6dp"/>
+
+        <TextView
+            android:text="@string/digitelogin"
+            android:textColor="@color/cortexto"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView18" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="Nome"
+            android:id="@+id/edtNewNome" />
+
+        <TextView
+            android:text="@string/digiteemail"
+            android:textSize="20dp"
+            android:textColor="@color/cortexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView22" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="E-mail"
+            android:ems="10"
+            android:id="@+id/edtNewEmail" />
+
+
+
+        <TextView
+            android:text="@string/digitesenha"
+            android:textSize="20dp"
+            android:textColor="@color/cortexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView20" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha"
+            android:ems="10"
+            android:id="@+id/edtNewSenha" />
+
+        <TextView
+            android:text="@string/confirmasenha"
+            android:textSize="20dp"
+            android:textColor="@color/cortexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView25" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha"
+            android:ems="10"
+            android:id="@+id/edtConfirmaSenha" />
+
+
+    </LinearLayout>
+</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="15">
+
+
+        <Button
+            android:text="@string/botaoLogin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button"
+            android:onClick="fazerLogin"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="Cadastro"
+            android:text="@string/botaoNewLogin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button4"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

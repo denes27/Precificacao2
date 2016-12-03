@@ -1,4 +1,19 @@
 <resources>
+
+    <string name="key">SHAREDPREFERENCE_KEY</string>
+
+    <string name="bemvindo">Seja bem-vindo ao Emprice!</string>
+    <string name="digitelogin">Digite seu nome</string>
+    <string name="digiteemail">Digite seu e-mail</string>
+    <string name="digitesenha">Digite sua senha</string>
+    <string name="explicaçãologin">Para começar, vamos definir um nome de usuário e uma senha para que apenas pessoas autorizadas tenham acesso
+    ao seu aplicativo.</string>
+    <string name="login">Login:</string>
+    <string name="novocadastro">Novo Cadastro:</string>
+    <string name="confirmasenha">Confirme sua senha</string>
+    <string name="botaoLogin">Login</string>]
+    <string name="botaoNewLogin">Confirmar Novo Cadastro</string>
+
     <string name="app_name">Precificacao</string>
     <string name="title_activity_matrizes">Matrizes</string>
     <string name="texto_matrizes">Digite os dados dos gastos com matéria prima</string>
