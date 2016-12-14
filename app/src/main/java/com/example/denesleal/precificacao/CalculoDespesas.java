@@ -18,7 +18,7 @@ public class CalculoDespesas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculo_despesas);
 
-      /*  Intent intent2 = getIntent();
+      /*     Intent intent2 = getIntent();
         Bundle pacote = intent2.getExtras();
         float precoMP = pacote.getFloat("preco");*/
     }
