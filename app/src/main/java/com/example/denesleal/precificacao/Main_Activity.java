@@ -1,6 +1,6 @@
 package com.example.denesleal.precificacao;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,19 +10,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.security.spec.KeySpec;
-import java.util.ArrayList;
-
-import static com.example.denesleal.precificacao.R.id.home;
-
-public class Main_Activity extends AppCompatActivity {
-    public boolean recuperouDaNet = false;
+public class Main_Activity extends Activity {
     private static final String SH_NAME="MySharedPrefs";
     public static boolean logado;
     public static boolean cadastroinicial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_);
+
         //Declara shared preference
         SharedPreferences sharedPref = getSharedPreferences(SH_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();

@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="cortexto">#000000</color>
-    <color name="fundolista">#228B22</color>
-    <color name="fundoedt">#00FF00</color>
+    <color name="fundolista">#4861a6</color>
+    <color name="fundoedt">#b5d5f4</color>
 </resources>

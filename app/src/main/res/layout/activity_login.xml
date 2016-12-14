@@ -37,7 +37,7 @@
 
     <TextView
         android:layout_marginLeft="5dp"
-        android:text="@string/digiteemail"
+        android:text="@string/digitenome"
         android:textSize="20dp"
         android:textColor="@color/cortexto"
         android:layout_width="match_parent"
@@ -49,14 +49,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:hint="E-mail"
+        android:hint="Nome"
         android:ems="10"
-        android:id="@+id/edtLogin"
+        android:id="@+id/edtNome"
         android:layout_marginBottom="30dp"/>
 
     <TextView
         android:layout_marginLeft="5dp"
-        android:text="@string/digitesenha"
+        android:text="@string/digiteemail"
         android:textColor="@color/cortexto"
         android:textSize="20dp"
         android:layout_width="match_parent"
@@ -68,99 +68,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Senha"
+        android:hint="Email"
         android:ems="10"
-        android:id="@+id/edtSenha" />
+        android:id="@+id/edtEmail" />
 
 </LinearLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="50">
-    <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
 
-        android:background="@color/fundoedt">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/novocadastro"
-            android:textSize="25dp"
-            android:textColor="@color/cortexto"
-            android:layout_marginLeft="6dp"/>
-
-        <TextView
-            android:text="@string/digitelogin"
-            android:textColor="@color/cortexto"
-            android:textSize="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView18" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="Nome"
-            android:id="@+id/edtNewNome" />
-
-        <TextView
-            android:text="@string/digiteemail"
-            android:textSize="20dp"
-            android:textColor="@color/cortexto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView22" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="E-mail"
-            android:ems="10"
-            android:id="@+id/edtNewEmail" />
-
-
-
-        <TextView
-            android:text="@string/digitesenha"
-            android:textSize="20dp"
-            android:textColor="@color/cortexto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView20" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Senha"
-            android:ems="10"
-            android:id="@+id/edtNewSenha" />
-
-        <TextView
-            android:text="@string/confirmasenha"
-            android:textSize="20dp"
-            android:textColor="@color/cortexto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView25" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Senha"
-            android:ems="10"
-            android:id="@+id/edtConfirmaSenha" />
-
-
-    </LinearLayout>
-</ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -176,13 +89,6 @@
             android:onClick="fazerLogin"
             android:layout_weight="1" />
 
-        <Button
-            android:onClick="Cadastro"
-            android:text="@string/botaoNewLogin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/button4"
-            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>
