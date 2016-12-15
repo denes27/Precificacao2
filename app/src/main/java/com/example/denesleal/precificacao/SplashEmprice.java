@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 
 public class SplashEmprice extends Activity {
     // Timer da splash screen
@@ -12,7 +13,15 @@ public class SplashEmprice extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_emprice);
+        //Layout é uma custom view
+        setContentView(new CustomViewInicial(this));
+
+        // obter a resolução da tela:
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        // armazenar a resolução da tela:
+        Parameters.SCREEN_HEIGHT = displayMetrics.heightPixels;
+        Parameters.SCREEN_WIDTH  = displayMetrics.widthPixels;
 
         new Handler().postDelayed(new Runnable() {
             /*

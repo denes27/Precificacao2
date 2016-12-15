@@ -17,7 +17,7 @@ public class ListaOrcamento extends Activity {
     ArrayList<Produtos> lista = (ArrayList<Produtos>)produtosDAO.read(null);
     private ListView products;
 
-    @Override
+
     protected void OnCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculo_despesas);
