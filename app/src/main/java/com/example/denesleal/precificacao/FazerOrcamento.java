@@ -7,11 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static com.example.denesleal.precificacao.Ferramentas.emailUsuario;
+import static com.example.denesleal.precificacao.Ferramentas.nomeUsuario;
 
 // Classe principal
 public class FazerOrcamento extends Activity {
@@ -87,11 +91,11 @@ public class FazerOrcamento extends Activity {
                         CheckBox chk = (CheckBox) v;
                         String produto = (String) chk.getTag();
                         if(chk.isChecked()) {
-                            Toast.makeText(getApplicationContext(), "Checkbox de " + produto + " marcado!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Checkbox de " + produto + " marcado!", Toast.LENGTH_SHORT).show();
                             if(!selecionados.contains(produto))
                                 selecionados.add(produto);
                         } else {
-                            Toast.makeText(getApplicationContext(), "Checkbox de " + produto + " desmarcado!", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getApplicationContext(), "Checkbox de " + produto + " desmarcado!", Toast.LENGTH_SHORT).show();
                             if(selecionados.contains(produto))
                                 selecionados.remove(produto);
                         }
@@ -127,9 +131,22 @@ public class FazerOrcamento extends Activity {
         lsvEstados.setAdapter(lsvEstadosAdapter);
     }
     public void selecionarProdutos (View view){
+
         int n = selecionados.size();
-        String tst = selecionados.get(0);
-        Toast.makeText(this, "O primeiro elemento é "+tst, Toast.LENGTH_SHORT).show();
+        EditText nomeCliente = (EditText)findViewById(R.id.edtnomeCliente);
+        EditText emailCliente = (EditText)findViewById(R.id.edtemailCliente);
+
+        if(nomeCliente.length() != 0 && emailCliente.length() != 0 && selecionados.size() != 0) {
+            String nomecl = nomeCliente.getText().toString();
+            String emailcl = emailCliente.getText().toString();
+            String username = nomeUsuario;
+            String useremail = emailUsuario;
+            String tst = selecionados.get(0);
+            Toast.makeText(this, "O primeiro elemento é " + tst, Toast.LENGTH_SHORT).show();
+
+
+        }else Toast.makeText(this, "Preencha os campos de nome e email do cliente, e verifique se algum produto foi selecionado", Toast.LENGTH_SHORT).show();
     }
+
 }
 
