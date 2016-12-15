@@ -88,12 +88,19 @@ public class CalculoDespesas extends AppCompatActivity {
     }
     public void atualizaBD(View view){
         //Seja la qual for o destino das infos coletadas, usar esse método chamado pelo ultimo botão pra executar
-       // EditText edtNewNome = (EditText)findViewById(R.id.edtNewNome);
+        EditText edtNomeProduto = (EditText)findViewById(R.id.edtNomeProduto);
         EditText edtvalorfinal = (EditText)findViewById(R.id.edtvalorfinal);
+        TextView txtPreco = (TextView)findViewById(R.id.txtPreco);
 
         Produtos prod = new Produtos();
-   //     prod.setNome(edtNewNome.getText().toString());
-        prod.setPreco(Integer.parseInt(edtvalorfinal.getText().toString()));
+        prod.setNome(edtNomeProduto.getText().toString());
+
+        if(edtvalorfinal.length() != 0) {
+            prod.setPreco(Integer.parseInt(edtvalorfinal.getText().toString()));
+        }
+        else{
+            prod.setPreco(Integer.parseInt(txtPreco.getText().toString()));
+        }
 
         MeuBD meuBD = new MeuBD(this,MeuBD.DB_NAME,null,MeuBD.DB_VERSION);
 
