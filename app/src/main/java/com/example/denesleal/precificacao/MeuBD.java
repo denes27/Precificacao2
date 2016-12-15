@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MeuBD extends SQLiteOpenHelper {
     public static final String DB_NAME = "EmpriceOrc";
-    public static final String TABLE_NAME = "Produtos";
+    public static final String TABLE_NAME = "produtos";
     public static final String TABLE_NAME2 = "Orcamentos";
     public static final String TABLE_NAME3 = "Produtos_Orcamentos";
     public static final int    DB_VERSION = 1;
@@ -25,12 +25,12 @@ public class MeuBD extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String strSq1 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME+ " (" +
-                " id          INTEGER AUTOINCREMENT," +
+                " id          INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " nome        varchar(150), " +
-                " price       decimal(10,2)) ";
+                " preco       decimal(10,2)) ";
 
         String strSq2 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME2+ " (" +
-                " id          INTEGER AUTOINCREMENT," +
+                " id          INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " nome        varchar(150), " +
                 " senttoemail varchar(150)," +
                 " total       decimal(10,2)) ";
