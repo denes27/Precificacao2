@@ -22,7 +22,7 @@ public class SplashEmprice extends Activity {
             public void run() {
                 // Esse método será executado sempre que o timer acabar
                 // E inicia a activity principal
-                Intent i = new Intent(SplashEmprice.this, Main_Activity.class);
+                Intent i = new Intent(SplashEmprice.this, Ferramentas.class);
                 startActivity(i);
 
                 // Fecha esta activity

@@ -18,9 +18,10 @@ public class Ferramentas extends AppCompatActivity {
         startActivity(intent);
 
     }
-/*
+
     public void novoOrcamento (View view){
+        Intent intent = new Intent(this,FazerOrcamento.class);
+        startActivity(intent);
 
-
-    }*/
+    }
 }

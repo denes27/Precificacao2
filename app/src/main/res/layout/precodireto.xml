@@ -41,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:text="0"
+            android:hint="0"
             android:ems="10"
             android:id="@+id/edtPreco"
             android:layout_weight="5" />
