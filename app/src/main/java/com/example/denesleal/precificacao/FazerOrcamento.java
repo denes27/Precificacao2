@@ -161,10 +161,88 @@ public class FazerOrcamento extends Activity {
             String msg = "TESTE";
             String tst = selecionados.get(0);
             Toast.makeText(this, "Itens no orçamento " + selecionados.size(), Toast.LENGTH_SHORT).show();
+
             String urlStr = "http://www.codehost.com.br/emprice/server.php";
+
+            //String urlStr = "http://www.codehost.com.br/emprice/server.php?u_name="+nomecl+"&u_email="+emailcl+
+            //        "&c_name="+username+"&c_email="+useremail+"&orcamento="+msg;
 
         /// O ENVIO DOS DADOS TEM QUE IR AQUI. urlStr é o endereço do servidor e os parametros que devem ser enviados
             /// são: u_name, u_email, c_name, c_email e orcamento
+
+            // Create data variable for sent values to server
+
+            String data = URLEncoder.encode("u_name", "UTF-8")
+                    + "=" + URLEncoder.encode(nomecl, "UTF-8");
+
+            data += "&" + URLEncoder.encode("u_email", "UTF-8") + "="
+                    + URLEncoder.encode(emailcl, "UTF-8");
+
+            data += "&" + URLEncoder.encode("c_name", "UTF-8")
+                    + "=" + URLEncoder.encode(username, "UTF-8");
+
+            data += "&" + URLEncoder.encode("c_email", "UTF-8")
+                    + "=" + URLEncoder.encode(useremail, "UTF-8");
+
+            data += "&" + URLEncoder.encode("orcamento", "UTF-8")
+                    + "=" + URLEncoder.encode(msg, "UTF-8");
+
+            String text = "";
+            BufferedReader reader=null;
+
+            // Send data
+            try
+            {
+
+                // Defined URL  where to send data
+                URL url = new URL(urlStr);
+
+                // Send POST data request
+
+                URLConnection conn = url.openConnection();
+                conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                wr.write( data );
+                wr.flush();
+
+                // Get the server response
+
+                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                // Read Server Response
+                while((line = reader.readLine()) != null)
+                {
+                    // Append server response in string
+                    sb.append(line + "\n");
+                }
+
+
+                text = sb.toString();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                try
+                {
+
+                    reader.close();
+                }
+
+                catch(Exception ex) {}
+            }
+
+
+
+
+
+
+
+
 
 
 
