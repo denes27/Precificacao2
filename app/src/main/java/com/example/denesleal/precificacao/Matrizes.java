@@ -124,9 +124,9 @@ public class Matrizes extends AppCompatActivity {
         precoMP = 0;
         int m = 0;
         if(m != listapreco.size()){
-       // Toast.makeText(this, "Cheguei até antes do for", Toast.LENGTH_SHORT).show();
+
         for(m = 0;m < listapreco.size();m++){
-           // Toast.makeText(this, "Cheguei até o for "+m, Toast.LENGTH_SHORT).show();
+
             //Se as unidades usadas e compradas forem iguais:
             if(listaunidade.get(m).equals(listaunidadeusada.get(m))){
                 precoMP = precoMP + listapreco.get(m)*listaqtdusada.get(m);
@@ -135,7 +135,11 @@ public class Matrizes extends AppCompatActivity {
                     (listaunidade.get(m).equals("Litro(s)") && listaunidadeusada.get(m).equals("mL"))){
                 precoMP = precoMP + listapreco.get(m)*(listaqtdusada.get(m)/1000);
                 //Em qualquer outro caso deve haver inconsistência (ex: comprar 200g e usar 1 litro):
-            }else {
+            }else if((listaunidade.get(m).equals("g") && listaunidadeusada.get(m).equals("Kg")) ||
+                     (listaunidade.get(m).equals("mL") && listaunidadeusada.get(m).equals("Litro(s)"))) {
+
+                precoMP = precoMP + listapreco.get(m) * (listaqtdusada.get(m) * 1000);
+            }else{
                 Toast.makeText(this, "Houve algum erro na conversão de unidades. Verifique a lista feita.", Toast.LENGTH_LONG).show();
 
             }
