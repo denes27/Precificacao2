@@ -64,12 +64,15 @@ public class Main_Activity extends Activity {
         // EDIT: Mais uns IFs pro usuário ñ por dado errado;
 
         String produto = String.valueOf(edtProduto.getText().toString());
-        if (produto.equals("Produto")) {
+        if (produto.length() == 0) {
             Toast.makeText(this, "Digite algo no lugar de -Produto-", Toast.LENGTH_SHORT).show();
         } else {
 
             float preco = Float.valueOf(edtPreco.getText().toString());
 
+            if (edtPreco.length() == 0){
+                Toast.makeText(this, "Digite um preço valido", Toast.LENGTH_SHORT).show();
+            }else{
             if (preco < 0) {
                 Toast.makeText(this, "Digite um preço valido", Toast.LENGTH_SHORT).show();
             } else {
@@ -77,6 +80,8 @@ public class Main_Activity extends Activity {
                 Toast.makeText(this, "O banco de dados foi atualizado com um novo Produto", Toast.LENGTH_LONG).show();
                 setContentView(R.layout.activity_main_);
             }
+            }
+
         }
     }
     }

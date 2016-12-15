@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class MeuBD extends SQLiteOpenHelper {
-    public static final String DB_NAME = "EmpriceOrc"
+    public static final String DB_NAME = "EmpriceOrc";
     public static final String TABLE_NAME = "Produtos";
     public static final String TABLE_NAME2 = "Orcamentos";
     public static final String TABLE_NAME3 = "Produtos_Orcamentos";
