@@ -24,18 +24,18 @@ public class MeuBD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String strSq1 = "CREATE TABLE IF NOT EXIST "+TABLE_NAME+ " (" +
+        String strSq1 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME+ " (" +
                 " id          INTEGER AUTOINCREMENT," +
                 " nome        varchar(150), " +
                 " price       decimal(10,2)) ";
 
-        String strSq2 = "CREATE TABLE IF NOT EXIST "+TABLE_NAME2+ " (" +
+        String strSq2 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME2+ " (" +
                 " id          INTEGER AUTOINCREMENT," +
                 " nome        varchar(150), " +
                 " senttoemail varchar(150)," +
                 " total       decimal(10,2)) ";
 
-        String strSq3 = "CREATE TABLE IF NOT EXIST "+TABLE_NAME3+ " (" +
+        String strSq3 = "CREATE TABLE IF NOT EXISTS "+TABLE_NAME3+ " (" +
                 " orcamentos_id     int(11)," +
                 " produtos_id       int(11)) ";
 
