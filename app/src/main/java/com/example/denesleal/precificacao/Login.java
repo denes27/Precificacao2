@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static com.example.denesleal.precificacao.Main_Activity.cadastroinicial;
-import static com.example.denesleal.precificacao.Main_Activity.logado;
-
+import static com.example.denesleal.precificacao.Ferramentas.cadastroinicial;
+import static com.example.denesleal.precificacao.Ferramentas.emailUsuario;
+import static com.example.denesleal.precificacao.Ferramentas.logado;
+import static com.example.denesleal.precificacao.Ferramentas.nomeUsuario;
 
 public class Login extends AppCompatActivity{
 
@@ -36,16 +37,24 @@ public class Login extends AppCompatActivity{
         EditText email = (EditText)findViewById(R.id.edtEmail);
 
 
-        // logado e cadastro true, para voltar para ir para não voltar a tela de login quando iniciar a outra activity
+        // logado e cadastro true, para não voltar a tela de login quando iniciar a outra activity
         logado = true;
         cadastroinicial = true;
-        Intent intent = new Intent(this, Main_Activity.class);
+        nomeUsuario = nome.getText().toString();
+        emailUsuario = email.getText().toString();
+
+        Intent intent = new Intent(this, Ferramentas.class);
         startActivity(intent);
 
         Toast.makeText(this, "Cadastro realizado", Toast.LENGTH_SHORT).show();
 
         }
-
+        public void onDestroy(){
+            super.onDestroy();
+            if(!cadastroinicial){
+                System.exit(0);
+            }
+        }
 
 
     }

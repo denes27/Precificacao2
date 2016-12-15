@@ -11,6 +11,8 @@ import android.widget.Toast;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import static com.example.denesleal.precificacao.Ferramentas.nomeUsuario;
+
 public class CalculoDespesas extends AppCompatActivity {
 
     @Override
@@ -109,7 +111,7 @@ public class CalculoDespesas extends AppCompatActivity {
         produtosDAO.create(prod);
 
         float precofinal = Float.valueOf(edtvalorfinal.getText().toString());
-        Toast.makeText(this, "O preço final é R$ "+precofinal, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "o nome de usuario é "+nomeUsuario, Toast.LENGTH_SHORT).show();
     }
 
 }
