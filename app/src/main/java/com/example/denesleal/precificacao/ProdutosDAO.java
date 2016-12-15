@@ -26,7 +26,6 @@ public class ProdutosDAO implements DAO {
             SQLiteDatabase db = dataSource.getWritableDatabase();
 
             ContentValues cv = new ContentValues();
-            cv.put("id", prod.getId());
             cv.put("nome", prod.getNome());
             cv.put("preco", prod.getPreco());
 
@@ -66,7 +65,7 @@ public class ProdutosDAO implements DAO {
                     Produtos prod = new Produtos();
                     prod.setId(cursor.getInt(0));         // recupero cada coluna pelo numero
                     prod.setNome(cursor.getString(1));
-                    prod.setPreco(cursor.getInt(2));
+                    prod.setPreco(cursor.getFloat(2));
                     lista.add(prod);  // adiciono na lista
 
                 } while (cursor.moveToNext()); // enquanto houver proximo registro

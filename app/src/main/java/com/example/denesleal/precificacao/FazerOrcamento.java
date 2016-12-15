@@ -18,21 +18,37 @@ public class FazerOrcamento extends Activity {
     ArrayList<String> precos = new ArrayList<>();
     private final ArrayList<String> selecionados = new ArrayList<String>();
 
-    MeuBD meuBD = new MeuBD(this,MeuBD.DB_NAME,null,MeuBD.DB_VERSION);
-    ProdutosDAO produtosDAO = new ProdutosDAO(meuBD);
-    ArrayList<Produtos> produtos = (ArrayList<Produtos>) produtosDAO.read(null);
-
     ArrayList<String> PRODUTOS = new ArrayList<>();
     ArrayList<String> PRECOS = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MeuBD meuBD = new MeuBD(this,MeuBD.DB_NAME,null,MeuBD.DB_VERSION);
+        ProdutosDAO produtosDAO = new ProdutosDAO(meuBD);
+        ArrayList<Produtos> prod = (ArrayList<Produtos>) produtosDAO.read(null);
+
+
         //ADICIONAR EM PRODUTOS OS PRODUTOS CONTIDOS NO BD PARA FAZER O ORÇAMENTO
-        PRODUTOS.add(0,"teste1");
-        PRODUTOS.add(1,"teste2");
-        PRECOS.add(0,"R$500");
-        PRECOS.add(1,"R$1000");
+
+        if (prod == null){
+            Toast.makeText(this, "Deu RUIM Forte", Toast.LENGTH_SHORT).show();
+        }
+        else if (prod.size() == 0){
+            Toast.makeText(this, "Nenhum produto na Lista", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            int i = 0;
+            for (Produtos produto : prod) {
+                PRODUTOS.add(i, produto.getNome());
+                PRECOS.add(i, "" + produto.getPreco());
+                i++;
+            }
+        }
+
+
+
         // Define o arquivo /layout/main.xml como layout principal da aplicação
         setContentView(R.layout.activity_fazer_orcamento);
 
