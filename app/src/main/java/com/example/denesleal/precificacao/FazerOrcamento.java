@@ -1,6 +1,7 @@
 package com.example.denesleal.precificacao;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -143,6 +144,11 @@ public class FazerOrcamento extends Activity {
             String useremail = emailUsuario;
             String tst = selecionados.get(0);
             Toast.makeText(this, "O primeiro elemento é " + tst, Toast.LENGTH_SHORT).show();
+
+
+            //DESCOMENTAR ISSO QUANDO TIVER TD PRONTO PRO APP VOLTAR A TELA INICIAL UMA VEZ QUE ESTEJA TUDO PRONTO
+            //Intent intent = new Intent(this, Ferramentas.class);
+            //startActivity(intent);
 
 
         }else Toast.makeText(this, "Preencha os campos de nome e email do cliente, e verifique se algum produto foi selecionado", Toast.LENGTH_SHORT).show();
