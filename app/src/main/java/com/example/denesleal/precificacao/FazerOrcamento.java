@@ -15,10 +15,15 @@ import java.util.ArrayList;
 
 // Classe principal
 public class FazerOrcamento extends Activity {
+    ArrayList<String> precos = new ArrayList<>();
+    private final ArrayList<String> selecionados = new ArrayList<String>();
+
+    MeuBD meuBD = new MeuBD(this,MeuBD.DB_NAME,null,MeuBD.DB_VERSION);
+    ProdutosDAO produtosDAO = new ProdutosDAO(meuBD);
+    ArrayList<Produtos> produtos = (ArrayList<Produtos>) produtosDAO.read(null);
 
     ArrayList<String> PRODUTOS = new ArrayList<>();
     ArrayList<String> PRECOS = new ArrayList<>();
-    private final ArrayList<String> selecionados = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

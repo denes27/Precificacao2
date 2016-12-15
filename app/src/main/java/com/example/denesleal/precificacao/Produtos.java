@@ -7,7 +7,7 @@ package com.example.denesleal.precificacao;
 public class Produtos implements java.io.Serializable {
     private int id;
     private String nome;
-    private int preco;
+    private float preco;
 
     public int getId() {
         return id;
@@ -25,11 +25,11 @@ public class Produtos implements java.io.Serializable {
         this.nome = nome;
     }
 
-    public int getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(int preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 }
