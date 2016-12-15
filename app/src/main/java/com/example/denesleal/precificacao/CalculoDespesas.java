@@ -18,7 +18,7 @@ public class CalculoDespesas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculo_despesas);
 
-      /*     Intent intent2 = getIntent();
+      /*  Intent intent2 = getIntent();
         Bundle pacote = intent2.getExtras();
         float precoMP = pacote.getFloat("preco");*/
     }
@@ -88,7 +88,19 @@ public class CalculoDespesas extends AppCompatActivity {
     }
     public void atualizaBD(View view){
         //Seja la qual for o destino das infos coletadas, usar esse método chamado pelo ultimo botão pra executar
+        EditText edtNewNome = (EditText)findViewById(R.id.edtNewNome);
         EditText edtvalorfinal = (EditText)findViewById(R.id.edtvalorfinal);
+
+        Produtos prod = new Produtos();
+        prod.setNome(edtNewNome.getText().toString());
+        prod.setPreco(Integer.parseInt(edtvalorfinal.getText().toString()));
+
+        MeuBD meuBD = new MeuBD(this,MeuBD.DB_NAME,null,MeuBD.DB_VERSION);
+
+        ProdutosDAO produtosDAO = new ProdutosDAO(meuBD);
+
+        produtosDAO.create(prod);
+
         float precofinal = Float.valueOf(edtvalorfinal.getText().toString());
         Toast.makeText(this, "O preço final é R$ "+precofinal, Toast.LENGTH_SHORT).show();
     }
