@@ -2,6 +2,7 @@ package com.example.denesleal.precificacao;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import static com.example.denesleal.precificacao.Ferramentas.emailUsuario;
 import static com.example.denesleal.precificacao.Ferramentas.nomeUsuario;
@@ -52,7 +68,7 @@ public class FazerOrcamento extends Activity {
             }
         }
 
-        
+
         // Define o arquivo /layout/main.xml como layout principal da aplicação
         setContentView(R.layout.activity_fazer_orcamento);
 
@@ -131,7 +147,7 @@ public class FazerOrcamento extends Activity {
         };
         lsvEstados.setAdapter(lsvEstadosAdapter);
     }
-    public void selecionarProdutos (View view){
+    public void selecionarProdutos (View view) throws IOException {
 
         int n = selecionados.size();
         EditText nomeCliente = (EditText)findViewById(R.id.edtnomeCliente);
@@ -142,8 +158,17 @@ public class FazerOrcamento extends Activity {
             String emailcl = emailCliente.getText().toString();
             String username = nomeUsuario;
             String useremail = emailUsuario;
+            String msg = "TESTE";
             String tst = selecionados.get(0);
-            Toast.makeText(this, "O primeiro elemento é " + tst, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Itens no orçamento " + selecionados.size(), Toast.LENGTH_SHORT).show();
+            String urlStr = "http://www.codehost.com.br/emprice/server.php";
+
+        /// O ENVIO DOS DADOS TEM QUE IR AQUI. urlStr é o endereço do servidor e os parametros que devem ser enviados
+            /// são: u_name, u_email, c_name, c_email e orcamento
+
+
+
+
 
 
             //DESCOMENTAR ISSO QUANDO TIVER TD PRONTO PRO APP VOLTAR A TELA INICIAL UMA VEZ QUE ESTEJA TUDO PRONTO
