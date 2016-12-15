@@ -47,8 +47,7 @@ public class FazerOrcamento extends Activity {
             }
         }
 
-
-
+        
         // Define o arquivo /layout/main.xml como layout principal da aplicação
         setContentView(R.layout.activity_fazer_orcamento);
 
