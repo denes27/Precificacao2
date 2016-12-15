@@ -111,7 +111,9 @@ public class CalculoDespesas extends AppCompatActivity {
         produtosDAO.create(prod);
 
         float precofinal = Float.valueOf(edtvalorfinal.getText().toString());
-        Toast.makeText(this, "o nome de usuario é "+nomeUsuario, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "O produto "+edtNomeProduto.getText().toString()+" com preço R$"+precofinal+" foi cadastrado no BD", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Ferramentas.class);
+        startActivity(intent);
     }
 
 }

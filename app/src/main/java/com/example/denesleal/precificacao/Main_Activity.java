@@ -68,7 +68,8 @@ public class Main_Activity extends Activity {
                         prod.setPreco(Float.valueOf(edtPreco.getText().toString()));
                         produtosDAO.create(prod);
                         Toast.makeText(this, "O banco de dados foi atualizado com um novo Produto", Toast.LENGTH_LONG).show();
-                        setContentView(R.layout.activity_main_);
+                        Intent intent = new Intent(this,Ferramentas.class);
+                        startActivity(intent);
                     }
                 }
             }

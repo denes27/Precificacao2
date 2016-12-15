@@ -49,6 +49,7 @@ public class Login extends AppCompatActivity{
         Toast.makeText(this, "Cadastro realizado", Toast.LENGTH_SHORT).show();
 
         }
+    //Se apertar back sem fazer o cadastro, encerra o aplicativo
         public void onDestroy(){
             super.onDestroy();
             if(!cadastroinicial){
